@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group>
+        <item
+            android:id="@+id/user"
+            android:icon="@drawable/user"
+            android:title="用户" />
+        <item
+            android:id="@+id/region"
+            android:icon="@drawable/region"
+            android:title="地区" />
+        <item
+            android:id="@+id/help"
+            android:icon="@drawable/help"
+            android:title="帮助" />
+        <item
+            android:id="@+id/share"
+            android:icon="@drawable/share"
+            android:title="分享" />
+
+    </group>
+</menu>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">VulnerableApp</string>
+    <string name="header_nav_desc">Android漏洞靶场</string>
+</resources>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AttackApp</string>
+    <string name="header_nav_desc">攻击测试</string>
+</resources>
