@@ -11,4 +11,4 @@ Android应用层漏洞靶场，总结和复现一下自己学习过的漏洞。
 
 ## 此外
 
-![微信公众号](./assets/link.png)
+![微信公众号](https://fastly.jsdelivr.net/gh/Forgo7ten/VulnerableApp@main/assets/link.png)
