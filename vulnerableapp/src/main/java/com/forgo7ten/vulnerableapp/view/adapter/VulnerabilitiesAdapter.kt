@@ -27,6 +27,7 @@ class VulnerabilitiesAdapter(val VulnerabilityList: List<Vulnerability>) :
             val position = holder.adapterPosition
             val vulnerability = VulnerabilityList[position]
             val intent = Intent(parent.context, vulnerability.targetActivity)
+            intent.putExtra("position", position)
             parent.context.startActivity(intent)
         }
         return holder
