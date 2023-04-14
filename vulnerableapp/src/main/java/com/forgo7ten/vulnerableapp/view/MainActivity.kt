@@ -34,7 +34,6 @@ class MainActivity : BaseActivity() {
             it.setHomeAsUpIndicator(R.drawable.home)
             // 显示原本的返回按钮
             it.setDisplayHomeAsUpEnabled(true)
-            it.title = "主页"
         }
 
 

@@ -26,7 +26,7 @@ class DenialServiceActivity : VulnerabilityActivity() {
 
     private fun initViews() {
         vulnerability?.let {
-            binding.titleTv.text = it.name
+            binding.titleTv.text = it.title
             val descHtml = it.descHtml
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 binding.descTv.text = Html.fromHtml(descHtml, Html.FROM_HTML_MODE_LEGACY);

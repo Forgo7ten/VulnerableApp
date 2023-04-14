@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">VulnerableApp</string>
     <string name="header_nav_desc">Android漏洞靶场</string>
+
     <string name="denial_service_title">App通用型拒绝服务漏洞[available]</string>
+    <string name="defining_components_not_implemented">Manifest中定义组件未实现[available]</string>
+    <string name="error">ERROR</string>
 </resources>

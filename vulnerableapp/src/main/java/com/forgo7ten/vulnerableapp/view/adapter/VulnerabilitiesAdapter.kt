@@ -38,6 +38,6 @@ class VulnerabilitiesAdapter(val VulnerabilityList: List<Vulnerability>) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // 这里是对item的数据进行赋值
-        holder.titleTv.text = VulnerabilityList[position].name
+        holder.titleTv.text = VulnerabilityList[position].title
     }
 }

@@ -12,6 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VulnerableApp"
         tools:targetApi="31">
+        <!-- 不存在的Activity：Manifest中定义组件未实现 漏洞复现-->
+        <activity
+            android:name=".vulnerabilities.NonexistentActivity"
+            android:exported="true" />
+        <activity
+            android:name=".vulnerabilities.VulnerabilityShowActivity"
+            android:exported="false" />
         <activity
             android:name=".view.MainActivity"
             android:exported="true">
