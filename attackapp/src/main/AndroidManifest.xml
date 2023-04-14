@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VulnerableApp">
         <activity
+            android:name=".attack.unimplcomp.UnimplCompActivity"
+            android:exported="false" />
+        <activity
             android:name=".attack.denialservice.DenialServiceActivity"
             android:exported="false" />
         <activity

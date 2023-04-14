@@ -1,11 +1,13 @@
 # VulnerableApp
 
 Android应用层漏洞靶场，总结和复现一下自己学习过的漏洞。
+同时为了锻炼Android开发，采用了kotlin语言，编写了简单的界面。
 
 
 ## 漏洞列表
 
-1. App通用型拒绝服务漏洞
+1.   Manifest中定义组件未实现漏洞
+2.   App通用型拒绝服务漏洞
 
 
 

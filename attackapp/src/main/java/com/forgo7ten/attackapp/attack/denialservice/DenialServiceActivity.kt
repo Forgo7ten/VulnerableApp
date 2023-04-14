@@ -6,6 +6,11 @@ import androidx.appcompat.app.AppCompatActivity
 import com.forgo7ten.attackapp.databinding.ActivityDenialServiceBinding
 
 
+/**
+ * @ClassName DenialServiceActivity
+ * @Description // APP通用型拒绝服务漏洞 攻击测试
+ * @Author Forgo7ten
+ **/
 class DenialServiceActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDenialServiceBinding
     override fun onCreate(savedInstanceState: Bundle?) {
