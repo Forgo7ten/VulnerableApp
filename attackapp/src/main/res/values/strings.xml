@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">AttackApp</string>
     <string name="header_nav_desc">攻击测试</string>
+    <string name="denial_service_title">App通用型拒绝服务漏洞 攻击</string>
 </resources>

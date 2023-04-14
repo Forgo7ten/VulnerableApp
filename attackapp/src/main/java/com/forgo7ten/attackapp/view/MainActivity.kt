@@ -8,14 +8,15 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.forgo7ten.attackapp.ConstValue.vulnerabilities
 import com.forgo7ten.attackapp.R
+import com.forgo7ten.attackapp.attack.denialservice.DenialServiceActivity
 import com.forgo7ten.attackapp.databinding.ActivityMainBinding
 import com.forgo7ten.attackapp.model.Vulnerability
 import com.forgo7ten.attackapp.view.adapter.VulnerabilitiesAdapter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val vulnerabilities = ArrayList<Vulnerability>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,12 +67,6 @@ class MainActivity : AppCompatActivity() {
      * 初始化漏洞列表，向RecyclerView中添加数据
      */
     private fun initVulnerabilities() {
-        repeat(5) {
-            vulnerabilities.add(Vulnerability("测试项目1", MainActivity::class.java))
-            vulnerabilities.add(Vulnerability("测试项目2", MainActivity::class.java))
-            vulnerabilities.add(Vulnerability("测试项目3", MainActivity::class.java))
-        }
-
         binding.recyclerView.layoutManager = LinearLayoutManager(this)
         binding.recyclerView.adapter = VulnerabilitiesAdapter(vulnerabilities)
         binding.recyclerView.addItemDecoration(
