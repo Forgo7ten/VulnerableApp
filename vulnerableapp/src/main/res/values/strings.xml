@@ -4,6 +4,7 @@
 
     <string name="defining_components_not_implemented">Manifest中定义组件未实现[available]</string>
     <string name="allow_backup_config">应用数据备份配置不当漏洞[available]</string>
+    <string name="allow_debug_config">应用调试模式配置不当漏洞[available]</string>
     <string name="denial_service_title">App通用型拒绝服务漏洞[available]</string>
     <string name="error">ERROR</string>
 </resources>
