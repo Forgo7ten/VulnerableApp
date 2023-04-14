@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--    'AndroidManifest.xml'文件中'android:allowBackup'属性错误的设置为'true',导致客户端应用数据可以被备份导出。-->
     <application
         android:name=".App"
         android:allowBackup="true"

@@ -16,8 +16,8 @@ object ConstValue {
     val vulnerabilities = ArrayList<Vulnerability>()
     fun initVulnerabilities() {
         vulnerabilities.apply {
-            add( Vulnerability( appContext.getString(R.string.denial_service_title), DenialServiceActivity::class.java ) )
             add( Vulnerability( appContext.getString(R.string.defining_components_not_implemented), UnimplCompActivity::class.java ) )
+            add( Vulnerability( appContext.getString(R.string.denial_service_title), DenialServiceActivity::class.java ) )
         }
     }
 }
