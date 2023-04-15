@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VulnerableApp">
         <activity
+            android:name=".view.DbActivity"
+            android:exported="true" />
+        <activity
             android:name=".attack.unimplcomp.UnimplCompActivity"
             android:exported="false" />
         <activity
