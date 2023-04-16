@@ -8,7 +8,7 @@ import android.util.Log
 
 /**
  * @ClassName MyDbHelper
- * @Description // 用于测试的数据库
+ * @Description // 用于测试的数据库帮助类
  * @Author Forgo7ten
  **/
 class MyDbHelper(val context: Context, val name: String, version: Int) :

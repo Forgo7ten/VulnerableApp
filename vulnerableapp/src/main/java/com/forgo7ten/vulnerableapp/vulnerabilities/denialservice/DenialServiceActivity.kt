@@ -9,7 +9,7 @@ import com.forgo7ten.vulnerableapp.vulnerabilities.VulnerabilityActivity
 
 /**
  * @ClassName DenialServiceActivity
- * @Description // App通用型拒绝服务漏洞
+ * @Description // 【App通用型拒绝服务】漏洞构造
  * @Author Forgo7ten
  **/
 class DenialServiceActivity : VulnerabilityActivity() {

@@ -9,6 +9,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.forgo7ten.vulnerableapp.R
 import com.forgo7ten.vulnerableapp.model.Vulnerability
 
+/**
+ * @ClassName VulnerabilitiesAdapter
+ * @Description // 用于显示漏洞列表的Adapter
+ * @Author Forgo7ten
+ **/
 class VulnerabilitiesAdapter(val VulnerabilityList: List<Vulnerability>) :
     RecyclerView.Adapter<VulnerabilitiesAdapter.ViewHolder>() {
 

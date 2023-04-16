@@ -8,6 +8,11 @@ import android.net.Uri
 import android.util.Log
 import com.forgo7ten.vulnerableapp.MyDbHelper
 
+/**
+ * @ClassName ImproperProvider
+ * @Description // 该ContentProvider开启了grantUriPermission选项，是【ContentProviderURI授权不当】漏洞复现的一部分
+ * @Author Forgo7ten
+ **/
 class ImproperProvider : ContentProvider() {
 
     private val TAG = "ImproperProvider"

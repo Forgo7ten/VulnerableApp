@@ -20,6 +20,7 @@
             android:grantUriPermissions="true"
             android:enabled="true"
             android:exported="false" />
+<!--        该Activity用于不经校验的转发intent-->
         <activity
             android:name=".vulnerabilities.StartActivity"
             android:exported="true">
@@ -38,6 +39,7 @@
             android:exported="false" />
         <activity
             android:name=".view.MainActivity"
+            android:launchMode="singleTask"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

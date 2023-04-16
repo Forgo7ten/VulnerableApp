@@ -12,6 +12,11 @@ import com.forgo7ten.vulnerableapp.R
 import com.forgo7ten.vulnerableapp.databinding.ActivityMainBinding
 import com.forgo7ten.vulnerableapp.view.adapter.VulnerabilitiesAdapter
 
+/**
+ * @ClassName MainActivity
+ * @Description // 主Activity
+ * @Author Forgo7ten
+ **/
 class MainActivity : BaseActivity() {
     private lateinit var binding: ActivityMainBinding
 
