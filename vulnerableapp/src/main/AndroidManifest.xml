@@ -13,11 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VulnerableApp"
         tools:targetApi="31">
+<!--        添加了【ContentProvider URI授权不当 】漏洞的利用条件，grantUriPermissions设置为true-->
         <provider
             android:name=".vulnerabilities.improperuriauthorization.ImproperProvider"
             android:authorities="com.forgo7ten.vulnerableapp.IMPROPERPROVIDER"
+            android:grantUriPermissions="true"
             android:enabled="true"
-            android:exported="false"></provider>
+            android:exported="false" />
         <activity
             android:name=".vulnerabilities.StartActivity"
             android:exported="true">

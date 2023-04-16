@@ -9,8 +9,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VulnerableApp">
         <activity
+            android:name=".attack.improperuriauthorization.ImproperUriActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.DbActivity"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.forgo7ten.attackapp.attack.DBACTIVITY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".attack.unimplcomp.UnimplCompActivity"
             android:exported="false" />
@@ -19,7 +27,8 @@
             android:exported="false" />
         <activity
             android:name=".view.MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
