@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VulnerableApp">
         <activity
+            android:name=".attack.provider_directory_traversal.DirectoryTraversalActivity"
+            android:exported="false" />
+        <activity
             android:name=".attack.improperuriauthorization.ImproperUriActivity"
             android:exported="false" />
         <activity

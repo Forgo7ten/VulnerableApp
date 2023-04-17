@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <!--    'AndroidManifest.xml'文件中'android:allowBackup'属性错误的设置为'true',导致客户端应用数据可以被备份导出。-->
+    <!-- 'AndroidManifest.xml'文件中'android:allowBackup'属性错误的设置为'true',导致客户端应用数据可以被备份导出。-->
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -13,14 +13,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VulnerableApp"
         tools:targetApi="31">
-<!--        添加了【ContentProvider URI授权不当 】漏洞的利用条件，grantUriPermissions设置为true-->
+        <!-- 复现【Provider文件目录遍历】漏洞的Provider，为了方便设置了导出 -->
+        <provider
+            android:name=".vulnerabilities.provider_directory_traversal.DirectoryTraversalProvider"
+            android:authorities="com.forgo7ten.vulnerableapp.DirectoryTraversalProvider"
+            android:enabled="true"
+            android:exported="true" />
+        <!-- 添加了【ContentProvider URI授权不当 】漏洞的利用条件，grantUriPermissions设置为true -->
         <provider
             android:name=".vulnerabilities.improperuriauthorization.ImproperProvider"
             android:authorities="com.forgo7ten.vulnerableapp.IMPROPERPROVIDER"
-            android:grantUriPermissions="true"
             android:enabled="true"
-            android:exported="false" />
-<!--        该Activity用于不经校验的转发intent-->
+            android:exported="false"
+            android:grantUriPermissions="true" />
+        <!-- 该Activity用于不经校验的转发intent-->
         <activity
             android:name=".vulnerabilities.StartActivity"
             android:exported="true">
@@ -39,8 +45,8 @@
             android:exported="false" />
         <activity
             android:name=".view.MainActivity"
-            android:launchMode="singleTask"
-            android:exported="true">
+            android:exported="true"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

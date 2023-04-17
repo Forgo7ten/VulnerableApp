@@ -4,4 +4,5 @@
     <string name="defining_components_not_implemented">Manifest中定义组件未实现 攻击</string>
     <string name="denial_service_title">App通用型拒绝服务漏洞 攻击</string>
     <string name="improper_uri_authorization">ContentProviderURI授权不当漏洞 攻击</string>
+    <string name="provider_directory_traversal">ContentProvider文件目录遍历漏洞 攻击</string>
 </resources>

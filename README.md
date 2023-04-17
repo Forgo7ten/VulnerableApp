@@ -29,6 +29,7 @@ Android应用层漏洞靶场，总结和复现一下自己学习过的漏洞。
     1.   [App通用型拒绝服务漏洞](./assets/VulnerabilityDetails/components_denial_service.md)
 -   Provider组件安全
     1.   [ContentProviderURI授权不当漏洞](./assets/VulnerabilityDetails/provider_improper_uri_authorization.md)
+    2.   [ContentProvider文件目录遍历漏洞](./assets/VulnerabilityDetails/provider_directory_traversal.md)
 
 
 
