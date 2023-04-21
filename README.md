@@ -30,6 +30,10 @@ Android应用层漏洞靶场，总结和复现一下自己学习过的漏洞。
 -   Provider组件安全
     1.   [ContentProviderURI授权不当漏洞](./assets/VulnerabilityDetails/provider_improper_uri_authorization.md)
     2.   [ContentProvider文件目录遍历漏洞](./assets/VulnerabilityDetails/provider_directory_traversal.md)
+-   WebView组件安全
+    1.   [应用克隆漏洞(webview部分)](./assets/VulnerabilityDetails/webview_bypass_origin_policy.md)
+    2.   [污染cookie任意执行漏洞](./assets/VulnerabilityDetails/webview_bypass_origin_policy.md)
+    3.   [WebView File域同源策略绕过漏洞（低版本有效，未能复现）](./assets/VulnerabilityDetails/webview_bypass_origin_policy.md)
 
 
 

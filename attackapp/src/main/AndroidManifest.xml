@@ -9,6 +9,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VulnerableApp">
         <activity
+            android:name=".attack.sameorigin_policy_bypass.StealCookieActivity"
+            android:exported="false" />
+        <activity
             android:name=".attack.provider_directory_traversal.DirectoryTraversalActivity"
             android:exported="false" />
         <activity
@@ -19,6 +22,7 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="com.forgo7ten.attackapp.attack.DBACTIVITY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

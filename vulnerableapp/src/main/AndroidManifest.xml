@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
     <!-- 'AndroidManifest.xml'文件中'android:allowBackup'属性错误的设置为'true',导致客户端应用数据可以被备份导出。-->
+    <!-- Android10以上通过usesCleartextTraffic设置允许非加密的HTTP请求，不安全 -->
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -12,7 +14,23 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/Theme.VulnerableApp"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".vulnerabilities.sameorigin_policy_bypass.SameoriginBypassActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="forgo7ten.github.io"
+                    android:pathPrefix="/sameorigin_policy_bypass"
+                    android:scheme="fvulnerable" />
+            </intent-filter>
+        </activity>
         <!-- 复现【Provider文件目录遍历】漏洞的Provider，为了方便设置了导出 -->
         <provider
             android:name=".vulnerabilities.provider_directory_traversal.DirectoryTraversalProvider"
