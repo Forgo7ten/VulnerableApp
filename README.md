@@ -34,6 +34,7 @@ Android应用层漏洞靶场，总结和复现一下自己学习过的漏洞。
     1.   [应用克隆漏洞(webview部分)](./assets/VulnerabilityDetails/webview_bypass_origin_policy.md)
     2.   [污染cookie任意执行漏洞](./assets/VulnerabilityDetails/webview_bypass_origin_policy.md)
     3.   [WebView File域同源策略绕过漏洞（低版本有效，未能复现）](./assets/VulnerabilityDetails/webview_bypass_origin_policy.md)
+    4.   [js2native漏洞](./assets/VulnerabilityDetails/webview_js2native.md)
 
 
 

@@ -5,7 +5,8 @@
     <string name="denial_service_title">App通用型拒绝服务漏洞 攻击</string>
     <string name="improper_uri_authorization">ContentProviderURI授权不当漏洞 攻击</string>
     <string name="provider_directory_traversal">ContentProvider文件目录遍历漏洞 攻击</string>
-    <string name="webview_bypass_origin_policy">WebView 跨源策略漏洞 攻击</string>
+    <string name="webview_vulnerability">WebView相关漏洞 攻击</string>
     <string name="bypassorigin_appclone">应用克隆漏洞 攻击</string>
     <string name="bypassorigin_contaminatedcookie">污染Cookie 攻击</string>
+    <string name="webview_js2native">webview js2native 攻击</string>
 </resources>

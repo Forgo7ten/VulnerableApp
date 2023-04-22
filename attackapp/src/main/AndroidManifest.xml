@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VulnerableApp">
         <activity
-            android:name=".attack.sameorigin_policy_bypass.StealCookieActivity"
+            android:name=".attack.webview.WebviewAttackActivity"
             android:exported="false" />
         <activity
             android:name=".attack.provider_directory_traversal.DirectoryTraversalActivity"

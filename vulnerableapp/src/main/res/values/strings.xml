@@ -8,6 +8,6 @@
     <string name="denial_service_title">App通用型拒绝服务漏洞[available]</string>
     <string name="improper_uri_authorization">ContentProviderURI授权不当[available]</string>
     <string name="provider_directory_traversal">Provider文件目录遍历漏洞[available]</string>
-    <string name="webview_bypass_origin_policy">WebView 跨域漏洞[available]</string>
+    <string name="webview_vulnerability">WebView 相关漏洞[available]</string>
     <string name="error">ERROR</string>
 </resources>

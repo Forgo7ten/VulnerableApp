@@ -1,30 +1,27 @@
-package com.forgo7ten.vulnerableapp.vulnerabilities.sameorigin_policy_bypass
+package com.forgo7ten.vulnerableapp.vulnerabilities.webview
 
 import android.os.Bundle
 import android.util.Log
-import android.webkit.CookieManager
-import android.webkit.JsResult
-import android.webkit.WebView
-import android.webkit.WebViewClient
+import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
-import com.forgo7ten.vulnerableapp.databinding.ActivitySameoriginBypassBinding
+import com.forgo7ten.vulnerableapp.databinding.ActivityWebviewBinding
 
 
 /**
- * @ClassName SameoriginBypassActivity
- * @Description // 复现【WebView跨域】漏洞的Activity
+ * @ClassName WebviewActivity
+ * @Description // 复现WebView相关漏洞的Activity，目前包含：应用克隆漏洞、污染cookie漏洞、js2native漏洞
  * @Author Forgo7ten
  **/
-class SameoriginBypassActivity : AppCompatActivity() {
+class WebviewActivity : AppCompatActivity() {
     companion object {
         private const val TAG = "SameoriginBypass"
     }
 
-    private lateinit var binding: ActivitySameoriginBypassBinding
+    private lateinit var binding: ActivityWebviewBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding =
-            ActivitySameoriginBypassBinding.inflate(layoutInflater).apply { setContentView(root) }
+            ActivityWebviewBinding.inflate(layoutInflater).apply { setContentView(root) }
         initPrivateInfo("flag", "flag{webview_file_sameorigin_policy_bypass}")
         initViews()
         val data = intent.data
@@ -39,6 +36,9 @@ class SameoriginBypassActivity : AppCompatActivity() {
                 // 复现 污染cookie 设置的环境
                 initContaminatedCookie()
                 Log.d(TAG, "onCreate: contaminated cookie")
+            } else if ("js2native" in data.path!!) {
+                initJs2native()
+                Log.d(TAG, "onCreate: contaminated js2native")
             }
             binding.webview.loadUrl(data.getQueryParameter("url")!!)
         } else {
@@ -47,6 +47,22 @@ class SameoriginBypassActivity : AppCompatActivity() {
             // binding.webview.loadUrl("file:///data/local/tmp/test1.html")
         }
     }
+
+    private fun initJs2native() {
+        binding.webview.settings.apply {
+            javaScriptEnabled = true
+        }
+        class Info {
+            @JavascriptInterface
+            fun getFlag(): String {
+                return "flag{js2native_1}"
+            }
+        }
+        // 添加Javascript接口时要确保加载的网址可信，这里应该进行校验后再添加
+        // 如果未校验，则会导致不可信的js可以调用这些敏感函数
+        binding.webview.addJavascriptInterface(Info(), "info")
+    }
+
 
     /**
      * @Description // 初始化污染cookie的环境

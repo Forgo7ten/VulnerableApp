@@ -17,7 +17,7 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".vulnerabilities.sameorigin_policy_bypass.SameoriginBypassActivity"
+            android:name=".vulnerabilities.webview.WebviewActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -27,7 +27,7 @@
 
                 <data
                     android:host="forgo7ten.github.io"
-                    android:pathPrefix="/sameorigin_policy_bypass"
+                    android:pathPrefix="/webview_vulnerability"
                     android:scheme="fvulnerable" />
             </intent-filter>
         </activity>

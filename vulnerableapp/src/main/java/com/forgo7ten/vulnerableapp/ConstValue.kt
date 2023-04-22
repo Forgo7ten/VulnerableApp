@@ -3,7 +3,7 @@ package com.forgo7ten.vulnerableapp
 import com.forgo7ten.vulnerableapp.model.Vulnerability
 import com.forgo7ten.vulnerableapp.vulnerabilities.VulnerabilityShowActivity
 import com.forgo7ten.vulnerableapp.vulnerabilities.denialservice.DenialServiceActivity
-import com.forgo7ten.vulnerableapp.vulnerabilities.sameorigin_policy_bypass.SameoriginBypassActivity
+import com.forgo7ten.vulnerableapp.vulnerabilities.webview.WebviewActivity
 
 /**
  * @ClassName ConstValue
@@ -38,7 +38,7 @@ object ConstValue {
             "<h1>Content Provider文件目录遍历漏洞</h1>\n" + "<h2>漏洞简介</h2>\n" + "<p>对外暴露的Content Provider实现了openFile()接口，因此其他有相应调用该ContentProvider权限的应用即可调用ContentProvider的openFile接口进行文件数据访问。</p>\n" + "<p>但是如果没有进行ContentProvider访问权限控制和对访问的目标文件Uri进行有效判断，攻击者利用文件目录遍历访问任意可读文件。</p>\n" + "<h3>漏洞详情</h3>\n" + "<p>Android ContentProvider存在文件目录遍历安全漏洞，该漏洞源于对外暴露ContentProvider组件的应用，没有对ContentProvider组件的访问进行权限控制和对访问的目标文件的ContentQueryUri进行有效判断。</p>\n" + "<p>攻击者利用该应用暴露的ContentProvider的openFile()接口进行文件目录遍历以达到访问任意可读文件的目的。</p>\n" + "<pre><code class='language-markdown' lang='markdown'>public ParcelFileDescriptor openFile(@NonNull Uri uri, @NonNull String mode)\n" + "</code></pre>\n" + "<p>对外暴露的ContentProvider组件<strong>实现了openFile()接口</strong>，<strong>没有对所访问的目标文件Uri进行有效判断</strong>，如<strong>没有过滤</strong>限制如<code>../</code>可实现任意刻度文件的访问的ContentQueryUri</p>\n" + "<h3>漏洞危害</h3>\n" + "<h3>修复建议</h3>\n" + "<ul>\n" + "<li><p>非必要导出设置为不导出</p>\n" + "</li>\n" + "<li><p>如果没有读写文件的必要，去除<code>openFile()</code>方法接口</p>\n" + "</li>\n" + "<li><p>过滤限制跨域访问，对访问的目标文件路径进行有效判断</p>\n" + "<ul>\n" + "<li>使用Uri.decode()先对ContentQueryUri进行解码后，再对<code>uri</code>进行校验，过滤其中类似于<code>../</code>的字符串</li>\n" + "\n" + "</ul>\n" + "</li>\n" + "<li><p>设置权限来进行内部应用通过Content Provider的数据共享</p>\n" + "</li>\n" + "\n" + "</ul>\n" + "<h2>漏洞复现</h2>\n" + "<blockquote><p>复现环境：Pixel; AOSP_Android10.0.0_r2</p>\n" + "</blockquote>\n" + "<p>参考AttackApp应用</p>\n",
             VulnerabilityShowActivity::class.java) )
             /* WebView组件安全 */
-            add( Vulnerability(appContext.getString(R.string.webview_bypass_origin_policy),"高危", "TODO", SameoriginBypassActivity::class.java) )
+            add( Vulnerability(appContext.getString(R.string.webview_vulnerability),"高危", "TODO", WebviewActivity::class.java) )
         }
     }
 }
