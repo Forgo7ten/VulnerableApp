@@ -9,5 +9,6 @@
     <string name="improper_uri_authorization">ContentProviderURI授权不当[available]</string>
     <string name="provider_directory_traversal">Provider文件目录遍历漏洞[available]</string>
     <string name="webview_vulnerability">WebView 相关漏洞[available]</string>
+    <string name="mitm">中间人攻击 相关漏洞[available]</string>
     <string name="error">ERROR</string>
 </resources>

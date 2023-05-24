@@ -3,6 +3,7 @@ package com.forgo7ten.vulnerableapp
 import com.forgo7ten.vulnerableapp.model.Vulnerability
 import com.forgo7ten.vulnerableapp.vulnerabilities.VulnerabilityShowActivity
 import com.forgo7ten.vulnerableapp.vulnerabilities.denialservice.DenialServiceActivity
+import com.forgo7ten.vulnerableapp.vulnerabilities.mitm.MitmActivity
 import com.forgo7ten.vulnerableapp.vulnerabilities.webview.WebviewActivity
 
 /**
@@ -39,6 +40,8 @@ object ConstValue {
             VulnerabilityShowActivity::class.java) )
             /* WebView组件安全 */
             add( Vulnerability(appContext.getString(R.string.webview_vulnerability),"高危", "TODO", WebviewActivity::class.java) )
+            /* Http/Https安全 */
+            add( Vulnerability(appContext.getString(R.string.mitm),"高危", "TODO", MitmActivity::class.java) )
         }
     }
 }

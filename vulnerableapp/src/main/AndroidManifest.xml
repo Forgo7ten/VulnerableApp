@@ -17,6 +17,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".vulnerabilities.mitm.MitmActivity"
+            android:exported="false" />
+        <activity
             android:name=".vulnerabilities.webview.WebviewActivity"
             android:exported="true">
             <intent-filter>

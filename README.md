@@ -35,6 +35,10 @@ Android应用层漏洞靶场，总结和复现一下自己学习过的漏洞。
     2.   [污染cookie任意执行漏洞](./assets/VulnerabilityDetails/webview_bypass_origin_policy.md)
     3.   [WebView File域同源策略绕过漏洞（低版本有效，未能复现）](./assets/VulnerabilityDetails/webview_bypass_origin_policy.md)
     4.   [js2native漏洞](./assets/VulnerabilityDetails/webview_js2native.md)
+-   网络通信安全
+    1.   HTTPS关闭主机名验证漏洞
+    2.   自定义HostnameVerifier未验证主机名漏洞
+    3.   SSL通信信任任意服务端证书漏洞
 
 
 
