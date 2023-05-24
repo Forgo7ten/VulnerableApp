@@ -4,7 +4,7 @@
 
 Android应用层漏洞靶场，总结和复现一下自己学习过的漏洞。
 
-同时为了锻炼Android开发，采用了kotlin语言，编写了简单而丑陋且无用的界面😭。
+比起其他的漏洞靶场项目，添加了复现的APP及代码。
 
 ### 项目结构
 
@@ -14,27 +14,22 @@ Android应用层漏洞靶场，总结和复现一下自己学习过的漏洞。
 
 具体部分还是读源码叭，每个漏洞的代码还算蛮独立的。
 
-
 ## 漏洞列表
 
-> 目前还在持续更新中，StarStar~
-
-[>漏洞文档汇总<](./assets/VulnerabilityDetails/)
-
 -   Manifest安全
-    1.   [Manifest中定义组件未实现漏洞](./assets/VulnerabilityDetails/defining_components_not_implemented.md)
-    2.   [应用数据备份配置不当漏洞](./assets/VulnerabilityDetails/allow_backup_config.md)
-    3.   [应用调试模式配置不当漏洞](./assets/VulnerabilityDetails/allow_debug_config.md)
+    1.   Manifest中定义组件未实现漏洞
+    2.   应用数据备份配置不当漏洞
+    3.   应用调试模式配置不当漏洞
 -   通用组件安全
-    1.   [App通用型拒绝服务漏洞](./assets/VulnerabilityDetails/components_denial_service.md)
+    1.   App通用型拒绝服务漏洞
 -   Provider组件安全
-    1.   [ContentProviderURI授权不当漏洞](./assets/VulnerabilityDetails/provider_improper_uri_authorization.md)
-    2.   [ContentProvider文件目录遍历漏洞](./assets/VulnerabilityDetails/provider_directory_traversal.md)
+    1.   ContentProviderURI授权不当漏洞
+    2.   ContentProvider文件目录遍历漏洞
 -   WebView组件安全
-    1.   [应用克隆漏洞(webview部分)](./assets/VulnerabilityDetails/webview_bypass_origin_policy.md)
-    2.   [污染cookie任意执行漏洞](./assets/VulnerabilityDetails/webview_bypass_origin_policy.md)
-    3.   [WebView File域同源策略绕过漏洞（低版本有效，未能复现）](./assets/VulnerabilityDetails/webview_bypass_origin_policy.md)
-    4.   [js2native漏洞](./assets/VulnerabilityDetails/webview_js2native.md)
+    1.   应用克隆漏洞(webview部分)
+    2.   污染cookie任意执行漏洞
+    3.   WebView File域同源策略绕过漏洞（低版本有效，未能复现）
+    4.   js2native漏洞
 -   网络通信安全
     1.   HTTPS关闭主机名验证漏洞
     2.   自定义HostnameVerifier未验证主机名漏洞
@@ -44,6 +39,12 @@ Android应用层漏洞靶场，总结和复现一下自己学习过的漏洞。
 
 ## 此外
 
-新建了一个公众号，点个关注啦拜托🤪~
+新建了一个公众号，后续可能会更新一些本项目的漏洞应用文章🤪~
 
 ![微信公众号](https://fastly.jsdelivr.net/gh/Forgo7ten/VulnerableApp@main/assets/link.png)
+
+### 已有文章
+
+[#Android漏洞](https://mp.weixin.qq.com/mp/appmsgalbum?__biz=MzkyMzQ4MzAyOQ==&action=getalbum&album_id=2896565996352667649#wechat_redirect)
+
+-   [揭秘APP通用型拒绝服务漏洞：原理 本质 与防护](https://mp.weixin.qq.com/s/wOs55II0fmEkUl8Sbq0cMg)
