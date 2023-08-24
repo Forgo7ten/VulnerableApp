@@ -28,8 +28,7 @@ Android应用层漏洞靶场，总结和复现一下自己学习过的漏洞。
 -   WebView组件安全
     1.   应用克隆漏洞(webview部分)
     2.   污染cookie任意执行漏洞
-    3.   WebView File域同源策略绕过漏洞（低版本有效，未能复现）
-    4.   js2native漏洞
+    3.   js2native漏洞
 -   网络通信安全
     1.   HTTPS关闭主机名验证漏洞
     2.   自定义HostnameVerifier未验证主机名漏洞
